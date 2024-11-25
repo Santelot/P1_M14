@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook-P1-M14</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            padding: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .title {
+            font-size: 1.2em;
+        }
+        .subtitle {
+            font-size: 0.9em;
+            color: #e0e0e0;
+        }
+        .content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+    </style>
+    <script>
+        function updateActivities() {
+            const selectedTime = document.getElementById('class-time').value;
+
+            const activity2 = document.getElementById('activity-2');
+            const activity4Step5 = document.getElementById('activity-4-step-5');
+            const activity4Step6 = document.getElementById('activity-4-step-6');
+
+            // Ajustar visibilidad según duración
+            if (selectedTime === '45') {
+                if (activity2) activity2.style.display = 'none'; // Ocultar Actividad 2
+                if (activity4Step5) activity4Step5.style.display = 'table-row'; // Mostrar paso 5
+                if (activity4Step6) activity4Step6.style.display = 'table-row'; // Mostrar paso 6
+            } else if (selectedTime === '40') {
+                if (activity2) activity2.style.display = 'none'; // Ocultar Actividad 2
+                if (activity4Step5) activity4Step5.style.display = 'none'; // Ocultar paso 5
+                if (activity4Step6) activity4Step6.style.display = 'none'; // Ocultar paso 6
+            } else {
+                if (activity2) activity2.style.display = 'block'; // Mostrar Actividad 2
+                if (activity4Step5) activity4Step5.style.display = 'table-row'; // Mostrar paso 5
+                if (activity4Step6) activity4Step6.style.display = 'table-row'; // Mostrar paso 6
+            }
+
+            // Actualizar texto del tiempo seleccionado
+            document.getElementById('selected-time').innerText = `Tiempo efectivo de clase: ${selectedTime} minutos`;
+        }
+
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            content.style.display = content.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1 style="color: white;">Playbook-P1-M14</h1>
+    </div>
+    <div class="container">
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateActivities()">
+                <option value="50">50 minutos</option>
+                <option value="45">45 minutos</option>
+                <option value="40">40 minutos</option>
+            </select>
+        </div>
+        <h2 id="selected-time" class="time-title" style="color: #4CAF50;">Tiempo efectivo de clase: 50 minutos</h2>
+
+<!-- Actividad 0 -->
+<div id="activity-0" class="activity">
+    <div class="banner" onclick="toggleContent('activity-0-content')">
+        <div class="title"><strong>🔍 Actividad 0: Revisión de Misión ⏰ Tiempo: N/A</strong></div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Revisar que todos los recursos estén disponibles y funcionales.
+        </div>
+    </div>
+    <div id="activity-0-content" class="content">
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+            <tr style="background-color: #f9f9f9;">
+                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Acción</th>
+                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Diálogo Maestro</th>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    Revisar todos los recursos para asegurar que:
+                    <ul>
+                        <li>Los dispositivos tengan acceso a Scratch Jr. (web o aplicación) y funcionen correctamente.</li>
+                        <li>Cada estudiante tenga un set de bloques de LEGO.</li>
+                    </ul>
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    No aplica
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 1 -->
+<div id="activity-1" class="activity">
+    <div class="banner" onclick="toggleContent('activity-1-content')">
+        <div class="title"><strong>🎉 Actividad 1: Saludo y Ritual Gnius Club ⏰ Tiempo: 2.5 minutos</strong></div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Dar la bienvenida al grupo, agradecer y presentar los objetivos del día.
+        </div>
+    </div>
+    <div id="activity-1-content" class="content">
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+            <tr style="background-color: #f9f9f9;">
+                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Acción</th>
+                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Diálogo Maestro</th>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 1 (0.5 minutos):</strong> Proyectar la diapositiva 2 "¡Bienvenidos, Genios!" para dar la bienvenida. El maestro saluda y presenta el tema del día con entusiasmo y energía.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Hola, Genios! 🌟 ¿Listos para una nueva aventura? Hoy vamos a explorar el fascinante mundo de Scratch Jr. ¡Vamos a aprender cómo dar vida a nuestros personajes y crear historias increíbles! 🚀"
+                </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 2 (1 minuto):</strong> Proyectar la diapositiva 3 "¿Cómo se sienten hoy?" con dos nuevas opciones visuales (Pose de Superhéroe y Pose de Explorador). Pedir a los estudiantes que utilicen estas poses para expresar cómo están.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Antes de empezar, quiero saber cómo se sienten! Si se sienten llenos de energía y listos para la acción, pónganse en Pose de Superhéroe: manos en la cintura y mirada al frente, como si fueran a salvar el día. Si se sienten curiosos y listos para aprender, pónganse en Pose de Explorador: mano en la frente, como buscando algo emocionante en el horizonte. ¡Muéstrenme sus poses!"
+                </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 3 (0.5 minutos):</strong> Proyectar la diapositiva 4 "Ritual de Agradecimiento" e invitar a los estudiantes a participar en el ritual.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Ahora todos juntos, juntemos nuestras manos y digamos: '¡Gracias por estar aquí, Genios! Hoy vamos a aprender, crear y divertirnos juntos. ¡Vamos a darle vida a nuestros personajes en Scratch Jr.!' ¡Gran trabajo, Genios!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 4 (0.5 minutos):</strong> Proyectar la diapositiva 5 "Objetivos de la Misión". El maestro explica los objetivos del día de manera clara y motivadora.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Hoy vamos a trabajar en tres cosas importantes: 1) Usar bloques de movimiento en Scratch Jr., 2) Crear una historia con dos personajes que interactúan, y 3) Compartir nuestras creaciones en equipo. ¡Será un día increíble de programación y diversión!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 2 -->
+<div id="activity-2" class="activity">
+    <div class="banner" onclick="toggleContent('activity-2-content')">
+        <div class="title"><strong>🧠 Actividad 2: Brain Vitamin ⏰ Tiempo: 5 minutos</strong></div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Asociar colores con movimientos físicos y practicar secuencias.
+        </div>
+    </div>
+    <div id="activity-2-content" class="content">
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+            <tr style="background-color: #f9f9f9;">
+                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Acción</th>
+                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Diálogo Maestro</th>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 1 (1 minuto):</strong> Proyectar la diapositiva 6 "Color y Movimiento". Presentar a los estudiantes bloques de colores y asociar cada color con un movimiento físico específico (ejemplo: rojo = saltar, azul = girar, amarillo = avanzar).
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Genios, es hora de movernos y aprender jugando! Cada color que ven aquí representa un movimiento. Por ejemplo, si ven el bloque rojo, saltan. Si ven azul, giran. ¡Prepárense para el reto de movimientos de colores!"
+                </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 2 (2 minutos):</strong> Proyectar la diapositiva 7 y pedir a los estudiantes que sigan los movimientos asignados en el orden correcto. Repetir con secuencias cada vez más largas o complejas.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Ahora que conocen los movimientos, vamos a probar una secuencia. Miren la pantalla: rojo, azul, amarillo. ¡Eso significa saltar, girar, avanzar! Vamos a intentarlo juntos primero y luego lo hacen solos. ¿Listos para el reto?"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 3 (2 minutos):</strong> Proyectar la diapositiva 8. Los estudiantes forman parejas, cada uno con su set de bloques. Uno crea una secuencia de movimientos con sus bloques y da las instrucciones a su compañero para que las siga. Luego intercambian roles y repiten la actividad.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Ahora es su turno, Genios! Trabajen en parejas. Uno de ustedes tomará su set de bloques y creará una secuencia con movimientos. Explíquenle a su compañero cómo seguir la secuencia sin mostrarle los bloques. Después, cambien roles y hagan lo mismo. ¡Veamos quién sigue mejor las instrucciones!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 3 -->
+<div id="activity-3" class="activity">
+    <div class="banner" onclick="toggleContent('activity-3-content')">
+        <div class="title"><strong>🚀 Actividad 3: Challenge ⏰ Tiempo: 25.5 minutos</strong></div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Presentar niveles de dificultad y guiar el reto de programación en Scratch Jr.
+        </div>
+    </div>
+    <div id="activity-3-content" class="content">
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+            <tr style="background-color: #f9f9f9;">
+                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Acción</th>
+                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Diálogo Maestro</th>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 1 (0.5 minutos):</strong> Proyectar la diapositiva 9 "Desafío del Día". Explicar los tres niveles: Roockie ("Saludos entre amigos"), Master ("Los exploradores"), Hacker ("El juego de persecución").
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Es hora del desafío, Genios! Hoy tenemos tres niveles para elegir: <strong>Roockie</strong>, <strong>Master</strong> y <strong>Hacker</strong>. Cada uno tiene una misión diferente: saludar, explorar o perseguir. Escoge el nivel que más te guste y prepárate para programar y crear. ¿Quién está listo para este reto?"
+                </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 2 (2 minutos):</strong> Proyectar la diapositiva 10 "Detalles del Desafío". Describir cómo programar los movimientos y las interacciones según el nivel seleccionado. Incluir los bloques clave para cada nivel:
+                    <ul>
+                        <li>Roockie: Inicio → Mover Adelante → Fin.</li>
+                        <li>Master: Inicio → Mover Adelante → Girar Izquierda/Derecha → Fin.</li>
+                        <li>Hacker: Inicio → Mover Adelante → Mover Izquierda/Derecha → Esperar → Fin.</li>
+                    </ul>
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Genios, aquí están los detalles: <br><br>
+                    <strong>Nivel Roockie:</strong> dos personajes se saludan en el centro de la pantalla (bloques: Inicio, Mover Adelante, Fin). <br><br>
+                    <strong>Nivel Master:</strong> dos exploradores cruzan caminos y siguen trayectorias diferentes (bloques: Inicio, Mover Adelante, Girar, Fin). <br><br>
+                    <strong>Nivel Hacker:</strong> uno persigue al otro mientras intenta escapar (bloques: Inicio, Mover Adelante, Girar, Esperar, Fin). <br><br>
+                    ¡Elijan su reto y manos a la obra!"
+                </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 3 (20 minutos):</strong> Proyectar la diapositiva 11 "Tiempo para Crear". Supervisar y asistir a los estudiantes mientras trabajan. Recordarles que pueden cambiar de nivel si terminan antes.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Ahora es su momento de brillar, Genios! Tienen 20 minutos para completar su misión. Recuerden: <strong>Roockie</strong> es para un saludo simple, <strong>Master</strong> para caminos cruzados, y <strong>Hacker</strong> para una persecución. ¡Sean creativos y diviértanse!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 4 (3 minutos):</strong> Proyectar Diapositiva 12: "Revisión de Objetivos". Pedir a los estudiantes que muestren sus logros.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Increíble trabajo, Genios! Ahora veamos qué crearon. ¿Quién quiere mostrar cómo movió a su personaje y compartir qué les pareció más divertido o desafiante? ¡Estoy emocionado por ver sus ideas!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 4 -->
+<div id="activity-4" class="activity">
+    <div class="banner" onclick="toggleContent('activity-4-content')">
+        <div class="title"><strong>🤝 Actividad 4: Team Gnius ⏰ Tiempo: 11 minutos</strong></div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Colaborar en equipos para revisar, ajustar y mejorar los proyectos.
+        </div>
+    </div>
+    <div id="activity-4-content" class="content">
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+            <tr style="background-color: #f9f9f9;">
+                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Acción</th>
+                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Diálogo Maestro</th>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 1 (0.5 minutos):</strong> Proyectar la diapositiva 13 "Formación de Equipos". Pedir a los estudiantes que formen parejas con un compañero cercano. Explicar que cada equipo revisará el código del otro y dará retroalimentación constructiva.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Ahora es tiempo de trabajar en equipo, Genios! Formen parejas con un compañero cercano. Revisarán el código de su compañero, aprenderán lo que hizo y compartirán ideas para mejorar. ¡El trabajo en equipo siempre nos hace más fuertes!"
+                </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 2 (2 minutos):</strong> Proyectar Diapositiva 14: Temporizador de 30 segundos para que los estudiantes se organicen en equipos.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Tienen 30 segundos para formar sus equipos. ¡Busquen un compañero y prepárense para trabajar juntos! ¡El tiempo corre!"
+                </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 3 (2 minutos):</strong> Proyectar la diapositiva 14 y pedir a los estudiantes que observen y analicen el trabajo de su compañero, siguiendo una lista de preguntas guía: ¿Qué nivel completaste? ¿Qué bloques usaste? ¿Qué podrías mejorar? Asegurarse de dar retroalimentación respetuosa y útil.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Genios, es hora de explorar el trabajo de su compañero! Pregúntenle qué nivel completó y qué bloques usó. ¿Ven algo que podría mejorar? Denle ideas para hacerlo aún más creativo o eficiente. Recuerden, la retroalimentación es para ayudarnos a crecer."
+                </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 4 (3 minutos):</strong> Proyectar la diapositiva 15 y pedir a los estudiantes que intercambien roles. Uno se convierte en el Maestro y explica su proyecto al Aprendiz, quien hace preguntas y sugiere ideas. Luego cambian roles.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Turno de aprender y enseñar, Genios! Elijan quién será el Maestro y quién será el Aprendiz. El Maestro explicará su código paso a paso y el Aprendiz hará preguntas. Luego, cambien roles y sigan aprendiendo juntos. ¡Ser maestros y aprendices nos hace más genios aún!"
+                </td>
+            </tr>
+            <tr id="activity-4-step-5" style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 5 (2 minutos):</strong> Proyectar la diapositiva 16 y pedir a las parejas que trabajen juntas para implementar ideas nuevas o mejorar sus proyectos según la retroalimentación recibida. Supervisar y guiar en caso de dudas.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Ahora trabajen juntos para hacer sus proyectos aún mejores! Usen las ideas que compartieron y ajusten o mejoren los códigos. Recuerden, siempre podemos aprender algo nuevo y hacer nuestro trabajo más increíble. ¡Colaboren y diviértanse!"
+                </td>
+            </tr>
+            <tr id="activity-4-step-6">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 6 (2 minutos):</strong> Proyectar la diapositiva 17 "Reflexión en Equipo". Facilitar preguntas como: ¿Qué aprendiste de tu compañero? ¿Qué fue lo mejor de trabajar juntos? ¿Cómo se sintieron al compartir ideas?
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Genios, reflexionemos sobre lo que aprendimos juntos! Cuéntenme, ¿qué aprendieron de su compañero? ¿Qué fue lo mejor de colaborar? ¿Cómo se sintieron al compartir sus ideas? Recordemos que el aprendizaje compartido es un superpoder."
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 5 -->
+<div id="activity-5" class="activity">
+    <div class="banner" onclick="toggleContent('activity-5-content')">
+        <div class="title"><strong>🏅 Actividad 5: Honor the Lab ⏰ Tiempo: 4.5 minutos</strong></div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Reflexión final y organización del espacio de trabajo para cerrar con respeto y orden.
+        </div>
+    </div>
+    <div id="activity-5-content" class="content">
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+            <tr style="background-color: #f9f9f9;">
+                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Acción</th>
+                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Diálogo Maestro</th>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 1 (0.5 minutos):</strong> Proyectar la diapositiva 18 "Revisión de Objetivos". Guiar a los estudiantes en una breve reflexión grupal sobre lo aprendido y logrado durante la clase.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Genios, qué increíble trabajo hicieron hoy! Reflexionemos juntos: ¿Logramos los objetivos que nos propusimos al inicio? Revisemos: Usar bloques de inicio y fin, crear historias con dos personajes, y trabajar en equipo. ¡Lo lograron de una manera brillante!"
+                </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 2 (1 minuto):</strong> Guiar un momento de reconocimiento verbal y motivador. Aplaudir el esfuerzo grupal y destacar valores como la creatividad, la colaboración y el esfuerzo.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Hoy demostraron que son unos auténticos Genios. Su creatividad, trabajo en equipo, y esfuerzo brillaron en cada actividad. ¡Un gran aplauso para todos ustedes por hacer de esta clase un éxito absoluto!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; vertical-align: top; border-right: 1px solid #ddd;">
+                    <strong>Paso 3 (3 minutos):</strong> Proyectar la diapositiva 19 "Honor de Lab". Pedir a los estudiantes que devuelvan las tablets, bloques de LEGO, y demás materiales a su lugar correspondiente. Supervisar y agradecer su colaboración.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Genios, ahora vamos a honrar nuestro espacio de trabajo. Por favor, devuelvan las Magic Tablets, los bloques de LEGO, y cualquier otro material que usaron. Asegurémonos de que el aula quede tal y como la encontramos. ¡Gracias por su ayuda y compromiso!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+    </div> <!-- Cierre del container -->
+
+    <!-- Scripts adicionales -->
+    <script>
+        // Espacio para agregar scripts personalizados si es necesario
+    </script>
+</body>
+</html>
+
+
+
